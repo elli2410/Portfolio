@@ -5,6 +5,110 @@
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
+:root {
+  --ink-bg: #0a0a0a;
+  --ink-surface: #141414;
+  --ink-border: #2a2a2a;
+  --ink-border-soft: #1e1e1e;
+  --ink-text: #f0f0f0;
+  --ink-muted: #8a8a8a;
+  --ink-faint: #4a4a4a;
+}
+
 body {
   font-family: var(--font-sans);
+}
+
+.grid-texture {
+  background-image:
+    linear-gradient(#1a1a1a 1px, transparent 1px),
+    linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "a a b b"
+    "a a c d"
+    "e e f f";
+  grid-auto-rows: minmax(160px, auto);
+  gap: 1.25rem;
+}
+
+.bento-a { grid-area: a; }
+.bento-b { grid-area: b; }
+.bento-c { grid-area: c; }
+.bento-d { grid-area: d; }
+.bento-e { grid-area: e; }
+.bento-f { grid-area: f; }
+
+@media (max-width: 800px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+  .bento-a, .bento-b, .bento-c, .bento-d, .bento-e, .bento-f {
+    grid-area: auto;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-panel-empty {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+@keyframes log-reveal {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.log-line {
+  opacity: 0;
+  animation: log-reveal 0.3s ease-out forwards;
+}
+
+.log-1 { animation-delay: 0.2s; }
+.log-2 { animation-delay: 0.7s; }
+.log-3 { animation-delay: 1.2s; }
+.log-4 { animation-delay: 1.7s; }
+.log-5 { animation-delay: 2.0s; }
+.log-6 { animation-delay: 2.3s; }
+
+@keyframes flag-pulse {
+  0%, 100% { border-color: rgba(245, 245, 245, 0.4); }
+  50% { border-color: rgba(245, 245, 245, 1); }
+}
+
+.stack-flag {
+  animation: flag-pulse 1.8s ease-in-out 1.7s infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s step-start infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .log-line { animation: none; opacity: 1; }
+  .stack-flag { animation: none; border-color: rgba(245, 245, 245, 0.9); }
+  .cursor-blink { animation: none; }
 }

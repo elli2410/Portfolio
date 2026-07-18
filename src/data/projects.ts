@@ -26,13 +26,4 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
     repoUrl: "#",
   },
-  {
-    title: "Your third project goes here",
-    tag: "Add one",
-    description:
-      "Swap this out — DepEd procurement ML pipeline, FSL/MediaPipe recognition, or anything else you want recruiters to see.",
-    stack: ["Tag 1", "Tag 2", "Tag 3"],
-    caseStudyUrl: "#",
-    repoUrl: "#",
-  },
 ];
