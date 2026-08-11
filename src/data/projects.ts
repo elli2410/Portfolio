@@ -10,11 +10,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "RDDPDS — Real-Time Dynamic Dark Pattern Detection System",
-    tag: "Thesis / Research",
+    tag: "Thesis / Research - Ongoing",
     description:
       "An Android system that detects deceptive mobile ad patterns as they happen — combining a YOLOv11n visual detector, a temporal heuristic engine (H1–H8), and a Contextual Discrepancy Scoring layer.",
     stack: ["YOLOv11n", "AccessibilityService", "Android", "Logistic Regression", "Python"],
-    caseStudyUrl: "#",
     repoUrl: "#",
   },
   {
@@ -23,7 +22,6 @@ export const projects: Project[] = [
     description:
       "An admin dashboard for managing and displaying faculty information — data import flows, editable records, chart-based analytics, and one-click PDF export.",
     stack: ["React", "TypeScript", "shadcn/ui", "Chart.js", "html2canvas"],
-    caseStudyUrl: "#",
-    repoUrl: "#",
+    repoUrl: "https://github.com/appdev-faculty-status-display/Senior-High-Faculty-Display-Dashboard.git",
   },
 ];

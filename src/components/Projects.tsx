@@ -9,7 +9,7 @@ export default function Projects() {
     <section id="work" className="border-b border-neutral-800 py-24">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-2 font-mono text-sm text-neutral-100">01 / FEATURED WORK</p>
-        <h2 className="mb-14 text-3xl font-semibold">Projects</h2>
+        <h2 className="mb-14 text-3xl font-semibold">Projects & Works</h2>
 
         <div className="bento-grid">
           {projects.map((project, i) => (
@@ -39,11 +39,6 @@ export default function Projects() {
                 </div>
               </div>
               <div className="flex gap-5 text-sm">
-                {project.caseStudyUrl && (
-                  <a href={project.caseStudyUrl} className="text-neutral-100">
-                    Case study →
-                  </a>
-                )}
                 {project.repoUrl && (
                   <a href={project.repoUrl} className="text-neutral-100">
                     Repo →

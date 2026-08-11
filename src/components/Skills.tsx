@@ -7,18 +7,14 @@ import {
   SiExpress,
   SiNodedotjs,
   SiTailwindcss,
-  SiKotlin,
   SiGit,
   SiGithub,
-  SiAndroidstudio,
+  SiFigma,
+  SiGoogleanalytics,
+  SiNotion,
 } from "react-icons/si";
-
-const skillGroups = [
-  { title: "Languages", items: ["Python", "TypeScript / JavaScript", "Java / Kotlin"] },
-  { title: "ML / CV", items: ["YOLO / Object Detection", "Logistic Regression", "MediaPipe"] },
-  { title: "Frontend", items: ["React", "Tailwind CSS", "shadcn/ui"] },
-  { title: "Other", items: ["Android Studio", "Git / GitHub", "Security-conscious dev"] },
-];
+import { FaFileExcel, FaSlack } from "react-icons/fa6";
+import { PiPalette } from "react-icons/pi";
 
 const iconStack = [
   { icon: SiPython, label: "Python", color: "#3776AB" },
@@ -29,10 +25,13 @@ const iconStack = [
   { icon: SiExpress, label: "Express", color: "#F5F5F5" },
   { icon: SiMongodb, label: "MongoDB", color: "#47A248" },
   { icon: SiTailwindcss, label: "Tailwind", color: "#06B6D4" },
-  { icon: SiKotlin, label: "Kotlin", color: "#7F52FF" },
-  { icon: SiAndroidstudio, label: "Android Studio", color: "#3DDC84" },
   { icon: SiGit, label: "Git", color: "#F05032" },
   { icon: SiGithub, label: "GitHub", color: "#F5F5F5" },
+  { icon: SiFigma, label: "Figma", color: "#F24E1E" },
+  { icon: PiPalette, label: "Canva", color: "#00C4CC" },
+  { icon: FaFileExcel, label: "Excel", color: "#217346" },
+  { icon: SiGoogleanalytics, label: "Google Analytics", color: "#E37400" },
+  { icon: SiNotion, label: "Notion", color: "#F5F5F5" },
 ];
 
 export default function Skills() {
@@ -42,36 +41,17 @@ export default function Skills() {
         <p className="mb-2 font-mono text-sm text-neutral-100">02 / TOOLKIT</p>
         <h2 className="mb-14 text-3xl font-semibold">Skills</h2>
 
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2">
-          {/* Left: categorized text */}
-          <div className="grid grid-cols-2 gap-8">
-            {skillGroups.map((group) => (
-              <div key={group.title}>
-                <h4 className="mb-3 font-mono text-xs uppercase tracking-wide text-neutral-400">
-                  {group.title}
-                </h4>
-                <ul className="space-y-1 text-sm text-neutral-400">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {/* Right: icon grid */}
-          <div className="grid grid-cols-4 gap-4">
-            {iconStack.map(({ icon: Icon, label, color }) => (
-              <div
-                key={label}
-                className="glass-panel flex flex-col items-center justify-center gap-2 rounded-lg py-4"
-                title={label}
-              >
-                <Icon className="h-6 w-6" style={{ color }} />
-                <span className="font-mono text-[10px] text-neutral-500">{label}</span>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
+          {iconStack.map(({ icon: Icon, label, color }) => (
+            <div
+              key={label}
+              className="glass-panel flex flex-col items-center justify-center gap-2 rounded-lg py-5"
+              title={label}
+            >
+              <Icon className="h-7 w-7" style={{ color }} />
+              <span className="font-mono text-[10px] text-neutral-500">{label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

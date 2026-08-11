@@ -6,7 +6,7 @@ export default function Contact() {
         <h2 className="mb-8 text-3xl font-semibold">Let&apos;s talk</h2>
         <div className="flex flex-wrap gap-4">
           <a
-            href="mailto:you@example.com"
+            href="elliahrnpnp@gmail.com"
             className="rounded-md bg-white px-5 py-3 font-mono text-sm font-medium text-black"
           >
             Email me
