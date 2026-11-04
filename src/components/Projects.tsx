@@ -11,7 +11,7 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="glass-panel flex flex-col justify-between rounded-xl p-6 sm:p-7"
+              className="glass-panel lift flex flex-col justify-between rounded-xl p-6 sm:p-7"
             >
               <div>
                 <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
@@ -40,9 +40,12 @@ export default function Projects() {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-neutral-900 underline-offset-4 hover:underline"
+                    className="group inline-flex items-center gap-1 font-medium text-neutral-900 underline-offset-4 hover:underline"
                   >
-                    Repo →
+                    Repo
+                    <span className="motion-safe:transition-transform motion-safe:group-hover:translate-x-1">
+                      →
+                    </span>
                   </a>
                 ) : (
                   project.repoNote && (

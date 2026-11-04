@@ -45,7 +45,7 @@ export default function Skills() {
           {iconStack.map(({ icon: Icon, label, color }) => (
             <div
               key={label}
-              className="glass-panel flex flex-col items-center justify-center gap-2 rounded-lg py-5"
+              className="glass-panel lift flex flex-col items-center justify-center gap-2 rounded-lg py-5"
               title={label}
             >
               <Icon className="h-7 w-7" style={{ color }} />

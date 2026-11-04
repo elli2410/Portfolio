@@ -13,7 +13,7 @@ export default function Contact() {
         <div className="flex flex-wrap gap-4">
           <a
             href={`mailto:${EMAIL}`}
-            className="rounded-md bg-black px-5 py-3 font-mono text-sm font-medium text-white"
+            className="rounded-md bg-black px-5 py-3 font-mono text-sm font-medium text-white transition motion-safe:hover:-translate-y-0.5 hover:bg-neutral-700 hover:shadow-lg"
           >
             Email me
           </a>
@@ -21,7 +21,7 @@ export default function Contact() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black"
+            className="rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black transition motion-safe:hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white hover:shadow-lg"
           >
             Resume
           </a>
@@ -29,7 +29,7 @@ export default function Contact() {
             href="https://github.com/elli2410"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black"
+            className="rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black transition motion-safe:hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white hover:shadow-lg"
           >
             GitHub
           </a>
@@ -37,7 +37,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/elliah-rain-s-panopio-b6a839328"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black"
+            className="rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black transition motion-safe:hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white hover:shadow-lg"
           >
             LinkedIn
           </a>

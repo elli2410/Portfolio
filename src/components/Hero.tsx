@@ -28,14 +28,14 @@ export default function Hero() {
             <div className="mt-9 flex flex-wrap gap-4">
               <a
                 href="#work"
-                className="inline-flex items-center gap-2 rounded-md bg-black px-5 py-3 font-mono text-sm font-medium text-white"
+                className="group inline-flex items-center gap-2 rounded-md bg-black px-5 py-3 font-mono text-sm font-medium text-white transition motion-safe:hover:-translate-y-0.5 hover:bg-neutral-700 hover:shadow-lg"
               >
                 View my work
-                <FiArrowRight className="h-4 w-4" />
+                <FiArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-1" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black"
+                className="inline-flex items-center gap-2 rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black transition motion-safe:hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white hover:shadow-lg"
               >
                 <FiMail className="h-4 w-4" />
                 Get in touch
@@ -44,14 +44,14 @@ export default function Hero() {
           </div>
 
           {/* Right: photo */}
-          <div className="glass-panel relative aspect-square w-full max-w-[280px] justify-self-center overflow-hidden rounded-2xl sm:justify-self-end">
+          <div className="glass-panel lift group relative aspect-square w-full max-w-[280px] justify-self-center overflow-hidden rounded-2xl sm:justify-self-end">
             <Image
               src="/photo.jpeg"
               alt="Elli"
               fill
               sizes="280px"
               priority
-              className="object-cover"
+              className="object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
             />
           </div>
         </div>
