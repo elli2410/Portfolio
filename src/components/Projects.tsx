@@ -1,55 +1,57 @@
 import { projects } from "@/data/projects";
+import { ARROW, PixelSprite } from "./PixelSprite";
 
 export default function Projects() {
   return (
-    <section id="work" className="border-b border-neutral-200 py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-2 font-mono text-sm text-neutral-900">01 / FEATURED WORK</p>
-        <h2 className="mb-14 text-3xl font-semibold">Projects & Works</h2>
+    <section id="work" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="px-plate mb-14">
+          <p className="px-eyebrow mb-3">01 / FEATURED WORK</p>
+          <h2 className="px-title text-[clamp(1.1rem,3.4vw,1.75rem)]">Projects &amp; Works</h2>
+        </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {projects.map((project) => (
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+          {projects.map((project, i) => (
             <div
               key={project.title}
-              className="glass-panel lift flex flex-col justify-between rounded-xl p-6 sm:p-7"
+              className="px-panel px-card flex flex-col justify-between p-6 sm:p-8"
             >
               <div>
-                <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-                  <h3 className="text-lg font-semibold sm:text-xl">{project.title}</h3>
-                  <span className="whitespace-nowrap rounded-full border border-neutral-500 px-3 py-1 font-mono text-xs text-neutral-600">
-                    {project.tag}
-                  </span>
+                <p className="mb-3 font-pixel text-[0.55rem] text-[var(--px-cyan)]">
+                  QUEST {String(i + 1).padStart(2, "0")}
+                </p>
+                <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
+                  <h3 className="text-xl font-semibold leading-snug text-[var(--px-ink)] sm:text-2xl">
+                    {project.title}
+                  </h3>
+                  <span className="px-tag">{project.tag}</span>
                 </div>
-                <p className="mb-5 text-sm text-neutral-600 sm:text-base">
+                <p className="mb-6 text-base text-[var(--px-muted)] sm:text-lg">
                   {project.description}
                 </p>
-                <div className="mb-5 flex flex-wrap gap-2">
+                <div className="mb-7 flex flex-wrap gap-x-3 gap-y-3">
                   {project.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded bg-black/5 px-2.5 py-1 font-mono text-xs text-neutral-700"
-                    >
+                    <span key={item} className="px-chip">
                       {item}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="flex gap-5 text-sm">
+              <div>
                 {project.repoUrl ? (
                   <a
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1 font-medium text-neutral-900 underline-offset-4 hover:underline"
+                    aria-label={`${project.title} — view repository`}
+                    className="px-btn px-btn-sm px-btn-ghost"
                   >
                     Repo
-                    <span className="motion-safe:transition-transform motion-safe:group-hover:translate-x-1">
-                      →
-                    </span>
+                    <PixelSprite rows={ARROW} size={2} />
                   </a>
                 ) : (
                   project.repoNote && (
-                    <span className="font-mono text-xs text-neutral-500">
+                    <span className="inline-block text-base text-[var(--px-muted)] opacity-80">
                       {project.repoNote}
                     </span>
                   )

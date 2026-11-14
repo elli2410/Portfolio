@@ -16,42 +16,49 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
 
+// Colours are the brand colours, lightened where needed so they read on the dark night background.
 const iconStack = [
-  { icon: SiReact, label: "React", color: "#149ECA" },
-  { icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
-  { icon: SiJavascript, label: "JavaScript", color: "#D4A017" },
-  { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
-  { icon: SiTailwindcss, label: "Tailwind", color: "#06B6D4" },
-  { icon: SiPython, label: "Python", color: "#3776AB" },
-  { icon: FaJava, label: "Java", color: "#E76F00" },
-  { icon: SiPhp, label: "PHP", color: "#777BB4" },
-  { icon: SiMysql, label: "MySQL", color: "#4479A1" },
-  { icon: SiPostgresql, label: "PostgreSQL", color: "#336791" },
+  { icon: SiReact, label: "React", color: "#61DAFB" },
+  { icon: SiTypescript, label: "TypeScript", color: "#5B9CF0" },
+  { icon: SiJavascript, label: "JavaScript", color: "#F7DF1E" },
+  { icon: SiNodedotjs, label: "Node.js", color: "#8CC84B" },
+  { icon: SiTailwindcss, label: "Tailwind", color: "#38BDF8" },
+  { icon: SiPython, label: "Python", color: "#5AA9E6" },
+  { icon: FaJava, label: "Java", color: "#F89820" },
+  { icon: SiPhp, label: "PHP", color: "#9AA5E0" },
+  { icon: SiMysql, label: "MySQL", color: "#4F9BD1" },
+  { icon: SiPostgresql, label: "PostgreSQL", color: "#6F9FD8" },
   { icon: SiAndroidstudio, label: "Android Studio", color: "#3DDC84" },
-  { icon: SiLinux, label: "Linux", color: "#171717" },
-  { icon: SiGit, label: "Git", color: "#F05032" },
-  { icon: SiGithub, label: "GitHub", color: "#171717" },
-  { icon: SiFigma, label: "Figma", color: "#F24E1E" },
+  { icon: SiLinux, label: "Linux", color: "#FCC624" },
+  { icon: SiGit, label: "Git", color: "#F5694E" },
+  { icon: SiGithub, label: "GitHub", color: "#F0F0F0" },
+  { icon: SiFigma, label: "Figma", color: "#FF7262" },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-b border-neutral-200 py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <p className="mb-2 font-mono text-sm text-neutral-900">02 / TOOLKIT</p>
-        <h2 className="mb-14 text-3xl font-semibold">Skills</h2>
+    <section id="skills" className="px-6 py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="px-plate mb-14">
+          <p className="px-eyebrow mb-3">02 / TOOLKIT</p>
+          <h2 className="px-title text-[clamp(1.1rem,3.4vw,1.75rem)]">Skills</h2>
+        </div>
 
-        <div className="grid grid-cols-3 gap-4 sm:grid-cols-5">
-          {iconStack.map(({ icon: Icon, label, color }) => (
-            <div
-              key={label}
-              className="glass-panel lift flex flex-col items-center justify-center gap-2 rounded-lg py-5"
-              title={label}
-            >
-              <Icon className="h-7 w-7" style={{ color }} />
-              <span className="font-mono text-[10px] text-neutral-600">{label}</span>
-            </div>
-          ))}
+        <div className="px-panel p-6 sm:p-9">
+          <ul className="grid grid-cols-3 gap-5 sm:grid-cols-5 sm:gap-6">
+            {iconStack.map(({ icon: Icon, label, color }) => (
+              <li
+                key={label}
+                className="px-slot flex flex-col items-center justify-center gap-3 px-1 py-5"
+                title={label}
+              >
+                <Icon className="px-slot-icon h-8 w-8" style={{ color }} aria-hidden="true" />
+                <span className="text-center text-[0.8rem] leading-tight text-[var(--px-muted)] sm:text-sm">
+                  {label}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
