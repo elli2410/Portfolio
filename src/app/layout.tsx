@@ -1,5 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import "@fontsource/press-start-2p/400.css";
+import "@fontsource/pixelify-sans/400.css";
+import "@fontsource/pixelify-sans/600.css";
 import "./globals.css";
+import PixelWorld from "@/components/PixelWorld";
 
 const SITE_URL = "https://portfolio-drab-beta-79.vercel.app";
 const TITLE = "Elliah Rain Panopio — CS Student Portfolio";
@@ -24,6 +28,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#0b0a24",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,7 +39,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-white text-neutral-900">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <PixelWorld />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,104 +1,100 @@
 import Image from "next/image";
-import { FiArrowRight, FiMail } from "react-icons/fi";
+import { MAIL, PLAY, PixelSprite } from "./PixelSprite";
 
 export default function Hero() {
   return (
-    <header
-      id="top"
-      className="grid-texture flex min-h-screen flex-col justify-center border-b border-neutral-200 pt-16"
-    >
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-[1.3fr_0.7fr] sm:items-center">
-          {/* Left: identity + pitch */}
-          <div>
-            <p className="mb-4 font-mono text-sm text-neutral-600">
-              Computer Science Student · Open to internships
-            </p>
-            <h1 className="text-5xl font-semibold leading-tight text-black sm:text-6xl">
-              Hi, I&apos;m Elli.
-            </h1>
-            <p className="mt-5 max-w-xl text-xl text-neutral-700">
-              I turn ideas into software through web development, machine learning, and a
-              curiosity for solving real-world problems.
-            </p>
-            <p className="mt-4 max-w-lg text-neutral-600">
-              Elliah Rain Panopio — 4th-year CS student at National University Laguna, looking
-              for a software or frontend internship.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <a
-                href="#work"
-                className="group inline-flex items-center gap-2 rounded-md bg-black px-5 py-3 font-mono text-sm font-medium text-white transition motion-safe:hover:-translate-y-0.5 hover:bg-neutral-700 hover:shadow-lg"
-              >
-                View my work
-                <FiArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black transition motion-safe:hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white hover:shadow-lg"
-              >
-                <FiMail className="h-4 w-4" />
-                Get in touch
-              </a>
+    <>
+      <header
+        id="top"
+        className="relative flex min-h-[100svh] flex-col px-6 pb-44 pt-24 sm:pb-40 sm:pt-32"
+      >
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="px-panel p-6 sm:p-10">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-12">
+              {/* Right on desktop, first on mobile: portrait */}
+              <div className="order-first flex items-end gap-5 sm:order-last sm:flex-col sm:items-center sm:gap-6">
+                <div className="px-frame relative aspect-square w-24 shrink-0 sm:w-56">
+                  <Image
+                    src="/photo.jpeg"
+                    alt="Elli"
+                    fill
+                    sizes="(min-width: 640px) 224px, 96px"
+                    priority
+                    className="object-cover"
+                  />
+                </div>
+                <p className="px-nameplate">
+                  ELLI
+                  <span className="hidden sm:inline"> · 4TH-YEAR CS</span>
+                </p>
+              </div>
+
+              {/* Identity + pitch */}
+              <div>
+                <p className="mb-5 text-base text-[var(--px-gold)] sm:text-lg">
+                  Computer Science Student · Open to internships
+                </p>
+                <h1 className="px-title text-[clamp(1.6rem,5.4vw,3.2rem)]">Hi, I&apos;m Elli.</h1>
+                <p className="mt-6 max-w-xl text-lg text-[var(--px-ink)] sm:text-xl">
+                  I turn ideas into software through web development, machine learning, and a
+                  curiosity for solving real-world problems.
+                </p>
+                <p className="mt-4 max-w-lg text-base text-[var(--px-muted)] sm:text-lg">
+                  Elliah Rain Panopio — 4th-year CS student at National University Laguna, looking
+                  for a software or frontend internship.
+                </p>
+                <div className="mt-9 flex flex-wrap gap-x-6 gap-y-5">
+                  <a href="#work" className="px-btn">
+                    <PixelSprite rows={PLAY} size={2} />
+                    View my work
+                  </a>
+                  <a href="#contact" className="px-btn px-btn-ghost">
+                    <PixelSprite rows={MAIL} size={2} />
+                    Get in touch
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Right: photo */}
-          <div className="glass-panel lift group relative aspect-square w-full max-w-[280px] justify-self-center overflow-hidden rounded-2xl sm:justify-self-end">
-            <Image
-              src="/photo.jpeg"
-              alt="Elli"
-              fill
-              sizes="280px"
-              priority
-              className="object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
-            />
-          </div>
         </div>
+      </header>
 
-        {/* Supporting proof: live preview of the RDDPDS detection concept */}
-        <div className="mt-16 rounded-xl border border-neutral-200 bg-white/70 p-6 sm:p-8">
-          <p className="mb-5 font-mono text-xs text-neutral-600">
-            SCANNING FOR DECEPTIVE PATTERNS — a preview of how RDDPDS, my thesis project,
-            flags manipulative UI in real time
+      {/* Supporting proof: live preview of the RDDPDS detection concept */}
+      <section aria-label="Thesis preview" className="px-6 pb-8">
+        <div className="px-panel mx-auto max-w-5xl p-6 sm:p-8">
+          <p className="mb-6 text-sm text-[var(--px-muted)] sm:text-base">
+            <span className="text-[var(--px-pink)]">SCANNING FOR DECEPTIVE PATTERNS</span> — a
+            preview of how RDDPDS, my thesis project, flags manipulative UI in real time
           </p>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center">
-            <div className="relative h-44">
-              <div className="absolute left-3 top-3 h-24 w-32 rounded-md border border-neutral-300" />
-              <div className="absolute left-8 top-8 h-24 w-32 rounded-md border border-neutral-400" />
-              <div className="stack-flag absolute left-14 top-14 h-24 w-32 rounded-md border border-dashed border-neutral-900 bg-white/90 p-2">
-                <div className="mb-2 h-1.5 w-1/2 rounded bg-neutral-300" />
-                <div className="h-3.5 w-2/3 rounded bg-neutral-900" />
+            <div className="relative h-48">
+              <div className="px-layer left-3 top-3" />
+              <div className="px-layer left-9 top-9 !border-[#5a4fb5]" />
+              <div className="px-layer stack-flag left-[3.75rem] top-[3.75rem] !bg-[#14103a] !border-[var(--px-pink)] p-2">
+                <div className="mb-2 h-2 w-1/2 bg-[var(--px-edge-dim)]" />
+                <div className="h-4 w-2/3 bg-[var(--px-pink)]" />
               </div>
-              <span className="absolute left-3 top-[164px] whitespace-nowrap font-mono text-[11px] text-neutral-600">
+              <span className="absolute left-3 top-[10.4rem] whitespace-nowrap text-sm text-[var(--px-muted)]">
                 layer 3 — flagged
               </span>
             </div>
 
-            <div className="border-l border-neutral-200 pl-5 font-mono text-xs">
-              <p className="log-line log-1 mb-1.5 text-neutral-500">
-                10:41:05 scanning layer 1...
-              </p>
-              <p className="log-line log-2 mb-1.5 text-neutral-500">
-                10:41:06 scanning layer 2...
-              </p>
-              <p className="log-line log-3 mb-1.5 text-neutral-500">
-                10:41:07 scanning layer 3...
-              </p>
-              <p className="log-line log-4 mb-1.5 font-medium text-neutral-900">
+            <div className="px-term border-l-4 border-[var(--px-edge-dim)] py-2 pl-5">
+              <p className="log-line log-1 mb-2 text-[var(--px-muted)]">10:41:05 scanning layer 1...</p>
+              <p className="log-line log-2 mb-2 text-[var(--px-muted)]">10:41:06 scanning layer 2...</p>
+              <p className="log-line log-3 mb-2 text-[var(--px-muted)]">10:41:07 scanning layer 3...</p>
+              <p className="log-line log-4 mb-2 font-semibold text-[var(--px-pink)]">
                 10:41:09 match — confirmshaming
               </p>
-              <p className="log-line log-5 mb-1.5 text-neutral-700">
-                10:41:09 CDS score: 0.94
-              </p>
-              <p className="log-line log-6 text-neutral-700">
+              <p className="log-line log-5 mb-2 text-[var(--px-cyan)]">10:41:09 CDS score: 0.94</p>
+              <p className="log-line log-6 text-[var(--px-gold)]">
                 10:41:10 flag raised{" "}
-                <span className="cursor-blink inline-block h-2.5 w-1.5 bg-neutral-900 align-[-1px]" />
+                <span className="cursor-blink inline-block h-3.5 w-2 bg-[var(--px-gold)] align-[-2px]" />
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </section>
+    </>
   );
 }

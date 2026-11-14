@@ -1,14 +1,15 @@
 export default function Nav() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <nav className="px-nav fixed top-0 left-0 right-0 z-50" aria-label="Main">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3.5 sm:px-6">
         <a
           href="#top"
-          className="font-mono text-sm text-black transition-opacity hover:opacity-60"
+          className="font-pixel text-[0.6rem] leading-none text-[var(--px-gold)] hover:text-white sm:text-[0.7rem]"
         >
-          Elliah Panopio
+          <span className="hidden sm:inline">Elliah Panopio</span>
+          <span className="sm:hidden">Elli</span>
         </a>
-        <ul className="flex gap-4 text-sm text-neutral-600 sm:gap-6">
+        <ul className="flex gap-3.5 sm:gap-8">
           <li>
             <a href="#work" className="nav-link">
               Work
