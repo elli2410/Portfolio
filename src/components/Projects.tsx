@@ -7,26 +7,27 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <div className="px-plate mb-14">
           <p className="px-eyebrow mb-3">01 / FEATURED WORK</p>
-          <h2 className="px-title text-[clamp(1.1rem,3.4vw,1.75rem)]">Projects &amp; Works</h2>
+          <h2 className="px-title text-[clamp(1.1rem,3.2vw,1.7rem)]">Projects &amp; Works</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className="px-panel px-card flex flex-col justify-between p-6 sm:p-8"
+              className="px-panel px-card px-screen flex flex-col justify-between overflow-hidden p-6 sm:p-8"
             >
               <div>
-                <p className="mb-3 font-pixel text-[0.55rem] text-[var(--px-cyan)]">
-                  QUEST {String(i + 1).padStart(2, "0")}
-                </p>
+                <div className="px-screen-bar">
+                  <span>AD-{String(i + 1).padStart(2, "0")}</span>
+                  <span className="px-live">ON AIR</span>
+                </div>
                 <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
-                  <h3 className="text-xl font-semibold leading-snug text-[var(--px-ink)] sm:text-2xl">
+                  <h3 className="text-2xl leading-tight text-[var(--px-ink)] sm:text-[1.8rem]">
                     {project.title}
                   </h3>
                   <span className="px-tag">{project.tag}</span>
                 </div>
-                <p className="mb-6 text-base text-[var(--px-muted)] sm:text-lg">
+                <p className="mb-6 text-xl text-[var(--px-muted)] sm:text-2xl">
                   {project.description}
                 </p>
                 <div className="mb-7 flex flex-wrap gap-x-3 gap-y-3">
@@ -51,7 +52,7 @@ export default function Projects() {
                   </a>
                 ) : (
                   project.repoNote && (
-                    <span className="inline-block text-base text-[var(--px-muted)] opacity-80">
+                    <span className="inline-block text-xl text-[var(--px-muted)] opacity-80">
                       {project.repoNote}
                     </span>
                   )

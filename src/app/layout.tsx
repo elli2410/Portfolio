@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource/press-start-2p/400.css";
-import "@fontsource/pixelify-sans/400.css";
-import "@fontsource/pixelify-sans/600.css";
+import "@fontsource/silkscreen/400.css";
+import "@fontsource/silkscreen/700.css";
+import "@fontsource/vt323/400.css";
 import "./globals.css";
 import PixelWorld from "@/components/PixelWorld";
 
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b0a24",
+  themeColor: "#05061c",
 };
 
 export default function RootLayout({

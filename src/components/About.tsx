@@ -4,13 +4,13 @@ export default function About() {
       <div className="mx-auto max-w-3xl">
         <div className="px-plate mb-16">
           <p className="px-eyebrow mb-3">03 / ABOUT</p>
-          <h2 className="px-title text-[clamp(1.1rem,3.4vw,1.75rem)]">A bit about me</h2>
+          <h2 className="px-title text-[clamp(1.1rem,3.2vw,1.7rem)]">A bit about me</h2>
         </div>
 
         {/* Dialogue box */}
         <div className="px-panel relative px-6 pb-14 pt-12 sm:px-10">
-          <span className="px-nametag">ELLI</span>
-          <div className="space-y-5 text-lg text-[var(--px-ink)] sm:text-xl">
+          <span className="px-nametag">ELLI@NIGHT-CITY:~$ ABOUT</span>
+          <div className="space-y-5 text-xl text-[var(--px-ink)] sm:text-2xl">
             <p>
               I originally chose Computer Science because I was curious about how software is
               built, not just how to use it. What started as an interest in computers and gaming

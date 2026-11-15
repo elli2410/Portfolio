@@ -4,7 +4,7 @@ export default function Nav() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3.5 sm:px-6">
         <a
           href="#top"
-          className="font-pixel text-[0.6rem] leading-none text-[var(--px-gold)] hover:text-white sm:text-[0.7rem]"
+          className="font-pixel text-[0.6rem] leading-none tracking-[0.14em] text-[var(--px-pink)] hover:text-white sm:text-[0.68rem]"
         >
           <span className="hidden sm:inline">Elliah Panopio</span>
           <span className="sm:hidden">Elli</span>

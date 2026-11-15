@@ -31,15 +31,15 @@ export default function Hero() {
 
               {/* Identity + pitch */}
               <div>
-                <p className="mb-5 text-base text-[var(--px-gold)] sm:text-lg">
-                  Computer Science Student · Open to internships
+                <p className="mb-5 font-pixel text-[0.62rem] uppercase tracking-[0.16em] text-[var(--px-cyan)] sm:text-[0.7rem]">
+                  &gt; Computer Science Student · Open to internships
                 </p>
-                <h1 className="px-title text-[clamp(1.6rem,5.4vw,3.2rem)]">Hi, I&apos;m Elli.</h1>
-                <p className="mt-6 max-w-xl text-lg text-[var(--px-ink)] sm:text-xl">
+                <h1 className="px-title text-[clamp(1.5rem,5vw,3rem)]">Hi, I&apos;m Elli.</h1>
+                <p className="mt-6 max-w-xl text-2xl text-[var(--px-ink)] sm:text-[1.7rem]">
                   I turn ideas into software through web development, machine learning, and a
                   curiosity for solving real-world problems.
                 </p>
-                <p className="mt-4 max-w-lg text-base text-[var(--px-muted)] sm:text-lg">
+                <p className="mt-4 max-w-lg text-xl text-[var(--px-muted)] sm:text-2xl">
                   Elliah Rain Panopio — 4th-year CS student at National University Laguna, looking
                   for a software or frontend internship.
                 </p>
@@ -62,19 +62,19 @@ export default function Hero() {
       {/* Supporting proof: live preview of the RDDPDS detection concept */}
       <section aria-label="Thesis preview" className="px-6 pb-8">
         <div className="px-panel mx-auto max-w-5xl p-6 sm:p-8">
-          <p className="mb-6 text-sm text-[var(--px-muted)] sm:text-base">
-            <span className="text-[var(--px-pink)]">SCANNING FOR DECEPTIVE PATTERNS</span> — a
+          <p className="mb-6 text-lg text-[var(--px-muted)] sm:text-xl">
+            <span className="font-pixel text-[0.62rem] tracking-[0.14em] text-[var(--px-pink)]">SCANNING FOR DECEPTIVE PATTERNS</span> — a
             preview of how RDDPDS, my thesis project, flags manipulative UI in real time
           </p>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center">
             <div className="relative h-48">
               <div className="px-layer left-3 top-3" />
-              <div className="px-layer left-9 top-9 !border-[#5a4fb5]" />
-              <div className="px-layer stack-flag left-[3.75rem] top-[3.75rem] !bg-[#14103a] !border-[var(--px-pink)] p-2">
+              <div className="px-layer left-9 top-9 !border-[#4a5ad0]" />
+              <div className="px-layer stack-flag left-[3.75rem] top-[3.75rem] !bg-[#0a0a2c] !border-[var(--px-pink)] p-2">
                 <div className="mb-2 h-2 w-1/2 bg-[var(--px-edge-dim)]" />
                 <div className="h-4 w-2/3 bg-[var(--px-pink)]" />
               </div>
-              <span className="absolute left-3 top-[10.4rem] whitespace-nowrap text-sm text-[var(--px-muted)]">
+              <span className="absolute left-3 top-[10.4rem] whitespace-nowrap text-base text-[var(--px-muted)]">
                 layer 3 — flagged
               </span>
             </div>
