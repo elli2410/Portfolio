@@ -41,24 +41,32 @@ export default function Skills() {
       <div className="mx-auto max-w-5xl">
         <div className="px-plate mb-14">
           <p className="px-eyebrow mb-3">02 / TOOLKIT</p>
-          <h2 className="px-title text-[clamp(1.1rem,3.4vw,1.75rem)]">Skills</h2>
+          <h2 className="px-title text-[clamp(1.1rem,3.2vw,1.7rem)]">Skills</h2>
         </div>
 
-        <div className="px-panel p-6 sm:p-9">
-          <ul className="grid grid-cols-3 gap-5 sm:grid-cols-5 sm:gap-6">
-            {iconStack.map(({ icon: Icon, label, color }) => (
+        <div className="px-panel px-vend p-0">
+          <div className="px-vend-head">
+            <span>VEND-O-MAT</span>
+            <span>24H · OPEN</span>
+          </div>
+          <div className="px-vend-glass mx-5 sm:mx-8">
+          <ul className="grid grid-cols-3 gap-4 sm:grid-cols-5 sm:gap-5">
+            {iconStack.map(({ icon: Icon, label, color }, i) => (
               <li
                 key={label}
-                className="px-slot flex flex-col items-center justify-center gap-3 px-1 py-5"
+                data-slot={`${String.fromCharCode(65 + Math.floor(i / 5))}${(i % 5) + 1}`}
+                className="px-slot flex flex-col items-center justify-center gap-2 px-1 pb-6 pt-7"
                 title={label}
               >
                 <Icon className="px-slot-icon h-8 w-8" style={{ color }} aria-hidden="true" />
-                <span className="text-center text-[0.8rem] leading-tight text-[var(--px-muted)] sm:text-sm">
+                <span className="text-center text-lg leading-tight text-[var(--px-muted)] sm:text-xl">
                   {label}
                 </span>
               </li>
             ))}
           </ul>
+          </div>
+          <div className="px-vend-tray mb-6">INSERT COIN · TAKE SKILL</div>
         </div>
       </div>
     </section>
