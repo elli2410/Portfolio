@@ -3,6 +3,7 @@ import "@fontsource/silkscreen/400.css";
 import "@fontsource/silkscreen/700.css";
 import "@fontsource/vt323/400.css";
 import "./globals.css";
+import "./props.css";
 import PixelWorld from "@/components/PixelWorld";
 
 const SITE_URL = "https://portfolio-drab-beta-79.vercel.app";
