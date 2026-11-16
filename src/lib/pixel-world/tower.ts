@@ -1,6 +1,6 @@
 import { ditherRect, dot, line, mulberry32, pick, rect, rint, shade, type Ctx, type Rng } from "./draw";
 import { acBig, brick, cableBundle, corrugated, discPx, pipeV, plate, poly, rust, slantRoof, slit, spill } from "./art";
-import { AMBER, CYAN, MAG, RED, backWall, billboard, shop, slab, stall, vendMachine, type Slab } from "./heroes";
+import { AMBER, CYAN, MAG, RED, backWall, shop, slab, stall, vendMachine, type Slab } from "./heroes";
 import { kanjiV, roundSign } from "./kanji";
 import { neonH } from "./neon";
 import type { Pool } from "./city";
@@ -107,15 +107,13 @@ export function buildTower(make: CanvasFactory, W: number, H: number): Tower {
     for (const s of slabs[side]) slab(c, rng, fx, side, W, s, side === "L" ? RED : CYAN);
   }
 
-  /* ---- hero 1: the billboard ------------------------------------------------ */
-  const bb = billboard(c, rng, fx, W, yWork);
-  // the red screen throws its light on the walls and the catwalk around it
-  spill(c, 0, bb.by - 40, W, bb.bh + 150, RED, 0.34, "down", 6);
-  spill(c, 0, bb.by - 40, bb.bx - 4, bb.bh + 150, RED, 0.3, "right", 4);
-  spill(c, bb.bx + bb.bw + 4, bb.by - 40, W - bb.bx - bb.bw, bb.bh + 150, RED, 0.3, "left", 4);
+  /* ---- the red billboard is a DOM prop now; its glow still floods the alley ---- */
+  const glowY = yWork - 260;
+  spill(c, 0, glowY, W, 520, RED, 0.22, "down", 6);
+  const cwY = yWork - 200;
 
   /* ---- cables crossing the alley ---------------------------------------------- */
-  for (let y = bb.cwY + 60; y < wallEnd - 40; y += rint(rng, 120, 190)) {
+  for (let y = cwY + 60; y < wallEnd - 40; y += rint(rng, 120, 190)) {
     const xl = reachAt("L", y) - 2;
     const xr = W - reachAt("R", y + 30) + 2;
     if (xr - xl < 30) continue;
@@ -124,20 +122,7 @@ export function buildTower(make: CanvasFactory, W: number, H: number): Tower {
     cableBundle(c, rng, xl, y, xr, y + 30, rint(rng, 16, 34), "#3a3a50");
   }
 
-  /* ---- hero 2: a vending machine on a ledge, for Skills ------------------------ */
-  {
-    const pw = Math.min(104, Math.max(72, Math.round(W * 0.16)));
-    const px = W - pw + 6; // out at the right edge, clear of the page's own vending panel
-    const py = ySk + 64;
-    plate(c, rng, px, py, pw, 7, "#1a1a26");
-    line(c, px + 6, py + 7, px + pw - 20, py + 46, "#0c0c16");
-    line(c, px + 7, py + 7, px + pw - 19, py + 46, "#0c0c16");
-    for (let rx = px; rx < px + pw; rx += 6) rect(c, rx, py - 8, 1, 8, "#0a0a12");
-    rect(c, px, py - 8, pw, 1, "#2a2a3c");
-    vendMachine(c, rng, fx, px + 10, py, 48, 90, CYAN, pools);
-    fx.flick.push(neonH(c, px + 2, py - 124, "DRINK", MAG, 3, 1.3));
-    rect(c, px + 34, py - 108, 1, 18, "#05050a");
-  }
+  /* ---- the skills vending machine is a DOM prop now ---- */
   // a big round sake sign on the left wall
   {
     const y = ySk - 150;
