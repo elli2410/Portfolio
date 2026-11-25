@@ -1,9 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import "@fontsource/silkscreen/400.css";
-import "@fontsource/silkscreen/700.css";
-import "@fontsource/vt323/400.css";
+import type { Metadata } from "next";
 import "./globals.css";
-import "./diorama.css";
 
 const SITE_URL = "https://portfolio-drab-beta-79.vercel.app";
 const TITLE = "Elliah Rain Panopio — CS Student Portfolio";
@@ -28,10 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: "#05041a",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body>{children}</body>
+      <body className="min-h-full flex flex-col bg-white text-neutral-900">{children}</body>
     </html>
   );
 }
