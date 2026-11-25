@@ -18,7 +18,7 @@ export default function Contact() {
             Email me
           </a>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1gno3XVqbv3FEp7sxsRNCpn3mCdqeAPFV/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md border border-neutral-300 px-5 py-3 font-mono text-sm text-black transition motion-safe:hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white hover:shadow-lg"
